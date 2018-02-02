@@ -19,7 +19,7 @@ const char* ssid = "SSID";             // enter your wifi's ssid name inside the
 const char* password = "PASSWORD";     // enter your wifi's password inside the ""'s  // Example "Password"
 
 int ledPin = 2;                        // declaring the onboard LED on Pin D2
-int clientLed = 5;                     // declaring the external LED on Pin 5
+int clientLed = 5;                     // declaring the external LED on Pin D5
 
 WiFiServer server(80);                // wifi server setup on port 80
 
