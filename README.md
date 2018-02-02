@@ -3,7 +3,7 @@
 
 This is an example of a ESP32 Wifi temperature server using a DHT-11 sensor.
 
-Load the code, enter your SSID and password where needed, upload than check the serial monitor
+Load the code, enter your SSID and password where needed, upload, then check the serial monitor
 Take the IP it gives you and enter that into a web browser
 The current temperature reading should show up on the webpage served
 The webpage is set to refresh itself every 5 seconds
