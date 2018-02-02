@@ -36,12 +36,12 @@ void setup()
   WiFi.begin(ssid,password);                   // this is when we try to connect to your network
   while ((!(WiFi.status() == WL_CONNECTED))){
   delay(300);
-  digitalWrite(ledPin,HIGH);                   // this makes the onboard led blink until connected
+  digitalWrite(ledPin,HIGH);                   // this makes the onboard LED blink until connected
   delay(50);
   digitalWrite(ledPin,LOW);
   delay(50);
   }
-  Serial.println("Connected");                 // once connected to a network, the onboard led will stay on
+  Serial.println("Connected");                 // once connected to a network, the onboard LED will stay on
   Serial.println((WiFi.localIP()));
   server.begin();
   digitalWrite(ledPin,HIGH);
@@ -53,8 +53,8 @@ void loop() {
     if (!client) { return; }
     while(!client.available()){  delay(1); }
     float newTempValue = dht.getTemperature();          // reads the sensor
-    int fahrenValue = (newTempValue * 1.8 + 32);        // converts the reading the Degrees Farhenheit
-    digitalWrite(clientLed,HIGH);                       // external led will light when this info is being served to client
+    int fahrenValue = (newTempValue * 1.8 + 32);        // converts the reading to Degrees Farhenheit
+    digitalWrite(clientLed,HIGH);                       // external LED will light when this info is being served to client
     Serial.println("Client Connected");
     client.println("HTTP/1.1 200 OK");
     client.println("Content-Type: text/html");
@@ -67,6 +67,6 @@ void loop() {
     client.println("</html>");
     client.println("<meta http-equiv=\"refresh\" content=\"5\">");  // this line will refresh the webpage every 5 seconds
     client.stop();                                     // to change the refresh rate, change the 5 to any desired number of seconds 
-    digitalWrite(clientLed,LOW);                                    // turns the external led off when finishing serving client
+    digitalWrite(clientLed,LOW);                                    // turns the external led off when finished serving client
     Serial.println("Client Disconnected");                          // prints this line in the serial monitor for debugging
 }  
